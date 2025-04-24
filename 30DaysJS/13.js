@@ -1,13 +1,21 @@
-function findVowelAndConsonat(string) {
+// // This function counts the number of vowels and consonants in a given string
+
+function findVowelAndConsonant(string) {
+  string = string.toLowerCase();
   const vowels = "aeiou";
   const consonants = "bcdfghjklmnpqrstvwxyz";
-  for (let i = 0; i <= string.length; i++) {
+  let vowelCount = 0;
+  let consonantCount = 0;
+  for (let i = 0; i < string.length; i++) {
     if (vowels.includes(string[i])) {
-      return `${string[i]} is a vowel`;
+      vowelCount++;
+    } else if (consonants.includes(string[i])) {
+      consonantCount++;
     } else {
-      return `${string[i]} is a consonant`;
+      console.log(string[i], "neither vowel nor consonant");
     }
   }
+  return { vowelCount, consonantCount };
 }
 
-console.log(findVowelAndConsonat("abc"));
+console.log(findVowelAndConsonant("Hello World 123"));
